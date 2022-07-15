@@ -1,0 +1,16 @@
+{
+  "C_Cpp.errorSquiggles": "Disabled",
+  "files.associations": {
+    "*.ts": "typescript",
+    "append_int.h": "c",
+    "array_list_int.h": "c",
+    "create_dinamic_vector_int.h": "c",
+    "array_list_create.h": "c",
+    "array_list_get.h": "c",
+    "array_list_push_back.h": "c",
+    "array_list_find.h": "c",
+    "array_list_insert_at.h": "c",
+    "stdlib.h": "c",
+    "array_list_destroy.C": "cpp"
+  }
+}
