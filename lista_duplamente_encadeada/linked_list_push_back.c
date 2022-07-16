@@ -1,19 +1,33 @@
 #include "linked_list_push_back.h"
-#include "list_int_node.h"
+
 #include <stdlib.h>
 
-unsigned int linked_list_push_back(linked_list_int * list, int i) {
-    struct list_int_node * new_node = (struct list_int_node *)malloc(sizeof(struct list_int_node));
-    if (linked_list_int->size == 0) {
-        linked_list_int->first = new_node;
-        linked_list_int->first->prev = NULL;
-        linked_list_int->first->next = linked_list_int->last;
-        linked_list_int->first->value = i;
+#include "list_int_node.h"
 
-        linked_list_int->last = (struct list_int_node *)malloc(sizeof(struct list_int_node));
-        linked_list_int->last->prev -> linked_list_int->first;
-        linked_list_int->last->next -> NULL;
+unsigned int linked_list_push_back(struct linked_list_int *list, int value) {
+  struct list_int_node *new_node =
+      (struct list_int_node *)malloc(sizeof(struct list_int_node));
+  if (list->size == 0) {
+    new_node->prev = NULL;
+    new_node->value = value;
+    new_node->next = NULL;
 
-        return 1;
-    }
+    list->first = new_node;
+    list->last = new_node;
+
+    list->size++;
+
+    return 1;
+  }
+
+  struct list_int_node *current = list->last;
+  current->next = new_node;
+  new_node->prev = current;
+  new_node->next = NULL;
+  new_node->value = value;
+  list->last = new_node;
+
+  list->size++;
+
+  return 1;
 }
